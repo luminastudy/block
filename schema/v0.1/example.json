@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/luminastudy/block/main/schema/v0.1/block.schema.json",
+  "title": {
+    "he_text": "בלוק לדוגמה",
+    "en_text": "Example Block"
+  },
+  "version": 1,
+  "prerequisites": [],
+  "parents": []
+}

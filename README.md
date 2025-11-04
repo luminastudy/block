@@ -72,19 +72,12 @@ A valid block object must have the following structure:
 - **prerequisites** (required): Array of block objects (recursive)
 - **parents** (required): Array of block objects (recursive)
 
-## Example
+## Examples
 
-```json
-{
-  "title": {
-    "he_text": "בלוק לדוגמה",
-    "en_text": "Example Block"
-  },
-  "version": 1,
-  "prerequisites": [],
-  "parents": []
-}
-```
+Example files with `$schema` references for IDE validation:
+
+- [example.json](schema/v0.1/example.json) - Simple block example
+- [example-advanced.json](schema/v0.1/example-advanced.json) - Advanced block with prerequisites and parents
 
 ## Contributing
 
