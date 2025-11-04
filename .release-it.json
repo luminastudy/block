@@ -10,7 +10,8 @@
     "releaseName": "v${version}"
   },
   "npm": {
-    "publish": true
+    "publish": true,
+    "access": "public"
   },
   "hooks": {
     "before:init": ["pnpm test"]
