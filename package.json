@@ -1,7 +1,8 @@
 {
   "name": "@luminastudy/block-schema",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "JSON Schema for Lumina Study block objects",
+  "type": "module",
   "main": "schema/v0.1/block.schema.json",
   "exports": {
     ".": "./schema/v0.1/block.schema.json",
@@ -11,6 +12,12 @@
   "files": [
     "schema"
   ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate": "vitest run",
+    "release": "release-it"
+  },
   "keywords": [
     "json-schema",
     "block",
@@ -18,5 +25,11 @@
     "versioned"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "release-it": "^17.0.0",
+    "vitest": "^2.0.0"
+  }
 }
