@@ -46,29 +46,6 @@ import blockSchema from '@luminastudy/block-schema'; // latest
 import blockSchemaV01 from '@luminastudy/block-schema/v0.1'; // specific version
 ```
 
-## Schema Structure
-
-A valid block object must have the following structure:
-
-```json
-{
-  "title": {
-    "he_text": "string",
-    "en_text": "string"
-  },
-  "prerequisites": [],
-  "parents": []
-}
-```
-
-### Properties
-
-- **title** (required): Object containing:
-  - `he_text`: Hebrew text string
-  - `en_text`: English text string
-- **prerequisites** (required): Array of block objects (recursive)
-- **parents** (required): Array of block objects (recursive)
-
 ## Examples
 
 Example files with `$schema` references for IDE validation:
