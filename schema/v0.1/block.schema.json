@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/luminastudy/block/main/schema/v0.1/block.schema.json",
+  "title": "Block",
+  "description": "Schema for a Lumina Study block object (v0.1)",
+  "version": "0.1",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "object",
+      "properties": {
+        "he_text": {
+          "type": "string",
+          "description": "Hebrew text for the title"
+        },
+        "en_text": {
+          "type": "string",
+          "description": "English text for the title"
+        }
+      },
+      "required": ["he_text", "en_text"],
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "number",
+      "description": "Version number of the block"
+    },
+    "prerequisites": {
+      "type": "array",
+      "description": "Array of prerequisite blocks",
+      "items": {
+        "$ref": "#"
+      },
+      "default": []
+    },
+    "parents": {
+      "type": "array",
+      "description": "Array of parent blocks",
+      "items": {
+        "$ref": "#"
+      },
+      "default": []
+    }
+  },
+  "required": ["title", "version", "prerequisites", "parents"],
+  "additionalProperties": true
+}
