@@ -96,6 +96,6 @@ Alternatively, trigger a release via GitHub Actions:
 ### Prerequisites for Publishing
 
 - Install pnpm: `npm install -g pnpm` or `corepack enable`
-- Ensure you have npm publish permissions for `@luminastudy/block-schema`
+- Ensure you have npm publish permissions for `@lumina-study/block-schema`
 - For local releases: Be logged in to npm (`pnpm login`)
 - For GitHub Actions: Configure `NPM_TOKEN` secret in repository settings

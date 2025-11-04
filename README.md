@@ -1,11 +1,11 @@
-# @luminastudy/block-schema
+# @lumina-study/block-schema
 
 Versioned JSON Schema for Lumina Study block objects.
 
 ## Installation
 
 ```bash
-npm install @luminastudy/block-schema
+npm install @lumina-study/block-schema
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @luminastudy/block-schema
 ### Latest Version (v0.1)
 
 ```javascript
-const blockSchema = require('@luminastudy/block-schema');
+const blockSchema = require('@lumina-study/block-schema');
 
 // Use with any JSON Schema validator (e.g., ajv, jsonschema, etc.)
 const Ajv = require('ajv');
@@ -39,11 +39,11 @@ if (!isValid) {
 
 ```javascript
 // Import a specific version
-const blockSchemaV01 = require('@luminastudy/block-schema/v0.1');
+const blockSchemaV01 = require('@lumina-study/block-schema/v0.1');
 
 // Or using ES modules
-import blockSchema from '@luminastudy/block-schema'; // latest
-import blockSchemaV01 from '@luminastudy/block-schema/v0.1'; // specific version
+import blockSchema from '@lumina-study/block-schema'; // latest
+import blockSchemaV01 from '@lumina-study/block-schema/v0.1'; // specific version
 ```
 
 ## Examples
