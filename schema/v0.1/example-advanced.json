@@ -4,14 +4,12 @@
     "he_text": "בלוק מתקדם",
     "en_text": "Advanced Block"
   },
-  "version": 2,
   "prerequisites": [
     {
       "title": {
         "he_text": "בלוק בסיסי",
         "en_text": "Basic Block"
       },
-      "version": 1,
       "prerequisites": [],
       "parents": []
     }
@@ -22,7 +20,6 @@
         "he_text": "בלוק אב",
         "en_text": "Parent Block"
       },
-      "version": 1,
       "prerequisites": [],
       "parents": []
     }

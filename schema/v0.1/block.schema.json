@@ -21,10 +21,6 @@
       "required": ["he_text", "en_text"],
       "additionalProperties": false
     },
-    "version": {
-      "type": "number",
-      "description": "Version number of the block"
-    },
     "prerequisites": {
       "type": "array",
       "description": "Array of prerequisite blocks",
@@ -42,6 +38,6 @@
       "default": []
     }
   },
-  "required": ["title", "version", "prerequisites", "parents"],
+  "required": ["title", "prerequisites", "parents"],
   "additionalProperties": true
 }

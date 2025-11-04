@@ -25,7 +25,6 @@ const block = {
     he_text: "בלוק לדוגמה",
     en_text: "Example Block"
   },
-  version: 1,
   prerequisites: [],
   parents: []
 };
@@ -57,7 +56,6 @@ A valid block object must have the following structure:
     "he_text": "string",
     "en_text": "string"
   },
-  "version": "number",
   "prerequisites": [],
   "parents": []
 }
@@ -68,7 +66,6 @@ A valid block object must have the following structure:
 - **title** (required): Object containing:
   - `he_text`: Hebrew text string
   - `en_text`: English text string
-- **version** (required): Number representing the block version
 - **prerequisites** (required): Array of block objects (recursive)
 - **parents** (required): Array of block objects (recursive)
 
