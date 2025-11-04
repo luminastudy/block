@@ -1,6 +1,6 @@
 {
-  "name": "@luminastudy/block-schema",
-  "version": "0.0.1",
+  "name": "@tupe12334/block-schema",
+  "version": "1.0.0",
   "description": "JSON Schema for Lumina Study block objects",
   "type": "module",
   "main": "schema/v0.1/block.schema.json",
