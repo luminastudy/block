@@ -6,6 +6,11 @@
   "version": "0.1",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the block"
+    },
     "title": {
       "type": "object",
       "properties": {
@@ -23,21 +28,23 @@
     },
     "prerequisites": {
       "type": "array",
-      "description": "Array of prerequisite blocks",
+      "description": "Array of prerequisite block IDs",
       "items": {
-        "$ref": "#"
+        "type": "string",
+        "format": "uuid"
       },
       "default": []
     },
     "parents": {
       "type": "array",
-      "description": "Array of parent blocks",
+      "description": "Array of parent block IDs",
       "items": {
-        "$ref": "#"
+        "type": "string",
+        "format": "uuid"
       },
       "default": []
     }
   },
-  "required": ["title", "prerequisites", "parents"],
+  "required": ["id", "title", "prerequisites", "parents"],
   "additionalProperties": true
 }

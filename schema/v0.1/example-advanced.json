@@ -1,27 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/luminastudy/block/main/schema/v0.1/block.schema.json",
+  "id": "123e4567-e89b-12d3-a456-426614174000",
   "title": {
     "he_text": "בלוק מתקדם",
     "en_text": "Advanced Block"
   },
   "prerequisites": [
-    {
-      "title": {
-        "he_text": "בלוק בסיסי",
-        "en_text": "Basic Block"
-      },
-      "prerequisites": [],
-      "parents": []
-    }
+    "550e8400-e29b-41d4-a716-446655440001"
   ],
   "parents": [
-    {
-      "title": {
-        "he_text": "בלוק אב",
-        "en_text": "Parent Block"
-      },
-      "prerequisites": [],
-      "parents": []
-    }
+    "550e8400-e29b-41d4-a716-446655440002"
   ]
 }
