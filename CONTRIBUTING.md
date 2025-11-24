@@ -27,6 +27,7 @@ pnpm test:watch
 ```
 
 The test suite validates:
+
 - Schema files are valid JSON Schema
 - Example files are valid JSON
 - Example files validate against their corresponding schemas
