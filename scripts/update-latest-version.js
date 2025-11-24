@@ -1,22 +1,22 @@
 #!/usr/bin/env node
+/* eslint-disable security/detect-non-literal-fs-filename */
+/* eslint-disable security/detect-object-injection */
 
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const rootDir = path.join(__dirname, '..')
+const defaultRootDir = path.join(__dirname, '..')
 
-function getLatestSchemaVersion() {
+export function getLatestSchemaVersion(rootDir = defaultRootDir) {
   const schemaDir = path.join(rootDir, 'schema')
   const versions = fs
     .readdirSync(schemaDir)
-    // eslint-disable-next-line security/detect-non-literal-fs-filename -- Safe: schemaDir is constructed from known __dirname
-    .filter(
-      dir =>
-        dir.startsWith('v') &&
-        fs.statSync(path.join(schemaDir, dir)).isDirectory()
-    )
+    .filter(dir => {
+      const fullPath = path.join(schemaDir, dir)
+      return dir.startsWith('v') && fs.statSync(fullPath).isDirectory()
+    })
     .map(dir => {
       const version = dir.slice(1)
       const parts = version.split('.').map(Number)
@@ -24,9 +24,7 @@ function getLatestSchemaVersion() {
     })
     .sort((a, b) => {
       for (let i = 0; i < Math.max(a.parts.length, b.parts.length); i++) {
-        // eslint-disable-next-line security/detect-object-injection -- Safe: accessing numeric array indices
         const aPart = a.parts[i] || 0
-        // eslint-disable-next-line security/detect-object-injection -- Safe: accessing numeric array indices
         const bPart = b.parts[i] || 0
         if (aPart !== bPart) return bPart - aPart
       }
@@ -36,7 +34,7 @@ function getLatestSchemaVersion() {
   return versions[0]
 }
 
-function updateReadme(latestVersion) {
+export function updateReadme(latestVersion, rootDir = defaultRootDir) {
   const readmePath = path.join(rootDir, 'README.md')
   let content = fs.readFileSync(readmePath, 'utf8')
   let updated = false
@@ -67,20 +65,26 @@ function updateReadme(latestVersion) {
   }
 }
 
-function updatePackageJson(latestVersionDir) {
+export function updatePackageJson(latestVersionDir, rootDir = defaultRootDir) {
   const packageJsonPath = path.join(rootDir, 'package.json')
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
 
   const schemaPath = `./schema/${latestVersionDir}/block.schema.json`
-  packageJson.main = schemaPath
-  packageJson.exports['.'] = schemaPath
+  const needsUpdate =
+    packageJson.main !== schemaPath || packageJson.exports['.'] !== schemaPath
 
-  fs.writeFileSync(
-    packageJsonPath,
-    JSON.stringify(packageJson, null, 2) + '\n',
-    'utf8'
-  )
-  console.log(`✓ Updated package.json main export to: ${schemaPath}`)
+  if (needsUpdate) {
+    packageJson.main = schemaPath
+    packageJson.exports['.'] = schemaPath
+    fs.writeFileSync(
+      packageJsonPath,
+      JSON.stringify(packageJson, null, 2) + '\n',
+      'utf8'
+    )
+    console.log(`✓ Updated package.json main export to: ${schemaPath}`)
+  } else {
+    console.log(`ℹ package.json already up to date with ${schemaPath}`)
+  }
 }
 
 function main() {
@@ -96,4 +100,7 @@ function main() {
   console.log('✓ All files updated successfully')
 }
 
-main()
+// Only run main if this is the main module
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main()
+}
