@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "language": "en,he",
+  "words": [
+    "ajv",
+    "lumina",
+    "pnpm",
+    "vitest",
+    "husky",
+    "eslint",
+    "codecov",
+    "commitlint",
+    "myorg",
+    "בלוק",
+    "לדוגמה",
+    "מתקדם",
+    "הפניות",
+    "חיצוניות"
+  ],
+  "languageSettings": [
+    {
+      "languageId": "*",
+      "locale": "en,he"
+    }
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "coverage",
+    "pnpm-lock.yaml",
+    "*.min.js",
+    ".git"
+  ]
+}

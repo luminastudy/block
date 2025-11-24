@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": ["tests/**/*.test.js"],
+  "project": ["tests/**/*.js"],
+  "ignore": ["coverage/**"],
+  "ignoreDependencies": [],
+  "ignoreExportsUsedInFile": true,
+  "ignoreWorkspaces": []
+}

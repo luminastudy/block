@@ -7,6 +7,7 @@
   "exports": {
     ".": "./schema/v0.1/block.schema.json",
     "./v0.1": "./schema/v0.1/block.schema.json",
+    "./v0.2": "./schema/v0.2/block.schema.json",
     "./schema/*": "./schema/*"
   },
   "files": [
@@ -15,7 +16,16 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
     "validate": "vitest run",
+    "lint": "eslint tests --ext .js",
+    "lint:fix": "eslint tests --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "spell": "cspell lint '**/*.{js,json,md}' --gitignore",
+    "spell:check": "cspell lint '**/*.{js,json,md}' --gitignore",
+    "knip": "knip",
+    "prepare": "husky",
     "release": "release-it"
   },
   "keywords": [
@@ -26,10 +36,26 @@
   ],
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "packageManager": "pnpm@10.20.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@vitest/coverage-v8": "^4.0.13",
     "ajv": "^8.12.0",
+    "cspell": "^9.3.2",
+    "eslint": "^9.39.1",
+    "eslint-config-agent": "^1.8.7",
+    "husky": "^9.1.7",
+    "knip": "^5.70.1",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.6.2",
     "release-it": "^17.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^4.0.13"
   }
 }
