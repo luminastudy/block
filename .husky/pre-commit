@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
 
+# Update latest version in README and package.json
+node scripts/update-latest-version.js
+
+# Stage updated files if they were modified
+git add README.md package.json 2>/dev/null || true
+
 # Run lint-staged
 pnpm exec lint-staged

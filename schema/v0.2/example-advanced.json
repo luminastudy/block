@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/luminastudy/block/main/schema/v0.2/block.schema.json",
+  "id": "123e4567-e89b-12d3-a456-426614174000",
+  "title": {
+    "he_text": "בלוק מתקדם עם הפניות חיצוניות",
+    "en_text": "Advanced Block with External References"
+  },
+  "prerequisites": [
+    "550e8400-e29b-41d4-a716-446655440001",
+    "github:lumina-study/math-blocks",
+    "github:lumina-study/algebra-basics/abc12345-6789-1234-5678-123456789abc#v1.2.3",
+    "gitlab:myorg/physics-blocks/def98765-4321-9876-5432-987654321fed"
+  ],
+  "parents": [
+    "550e8400-e29b-41d4-a716-446655440002",
+    "github:lumina-study/curriculum-tree#main"
+  ]
+}

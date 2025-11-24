@@ -1,11 +1,11 @@
 {
   "name": "@lumina-study/block-schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON Schema for Lumina Study block objects",
   "type": "module",
-  "main": "schema/v0.1/block.schema.json",
+  "main": "./schema/v0.2/block.schema.json",
   "exports": {
-    ".": "./schema/v0.1/block.schema.json",
+    ".": "./schema/v0.2/block.schema.json",
     "./v0.1": "./schema/v0.1/block.schema.json",
     "./v0.2": "./schema/v0.2/block.schema.json",
     "./schema/*": "./schema/*"
