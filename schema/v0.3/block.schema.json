@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/luminastudy/block/main/schema/v0.3/block.schema.json",
+  "title": "Block",
+  "description": "Schema for a Lumina Study block object (v0.3)",
+  "version": "0.3",
+  "type": "object",
+  "definitions": {
+    "blockReference": {
+      "description": "Reference to a block - either local UUID or external repository reference",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "description": "Local block reference by UUID"
+        },
+        {
+          "type": "string",
+          "pattern": "^(github|gitlab):[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(#.+)?$",
+          "description": "External block reference: <platform>:<org>/<repo>[/<block-id>][#<ref>]"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/blockReference",
+      "description": "Unique identifier for the block - local UUID or fully qualified external reference"
+    },
+    "title": {
+      "type": "object",
+      "properties": {
+        "he_text": {
+          "type": "string",
+          "description": "Hebrew text for the title"
+        },
+        "en_text": {
+          "type": "string",
+          "description": "English text for the title"
+        }
+      },
+      "required": ["he_text", "en_text"],
+      "additionalProperties": false
+    },
+    "prerequisites": {
+      "type": "array",
+      "description": "Array of prerequisite block references (local UUIDs or external repository references)",
+      "items": {
+        "$ref": "#/definitions/blockReference"
+      },
+      "default": []
+    },
+    "parents": {
+      "type": "array",
+      "description": "Array of parent block references (local UUIDs or external repository references)",
+      "items": {
+        "$ref": "#/definitions/blockReference"
+      },
+      "default": []
+    }
+  },
+  "required": ["id", "title", "prerequisites", "parents"],
+  "additionalProperties": true
+}

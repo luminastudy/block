@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/luminastudy/block/main/schema/v0.3/block.schema.json",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "title": {
+    "he_text": "בלוק לדוגמה",
+    "en_text": "Example Block"
+  },
+  "prerequisites": [],
+  "parents": []
+}

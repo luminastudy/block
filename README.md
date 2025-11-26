@@ -12,7 +12,7 @@ npm install @lumina-study/block-schema
 
 ### Which version should I use?
 
-- **v0.2** (Recommended) - Use if you need to reference blocks across repositories (GitHub/GitLab)
+- **v0.3** (Recommended) - Use if you need to reference blocks across repositories (GitHub/GitLab)
 - **v0.1** (Stable) - Use if you only need local block references via UUIDs
 
 Both versions are fully supported and maintained.
@@ -150,7 +150,7 @@ const blockSchemaV01 = require('@lumina-study/block-schema/v0.1')
 const blockSchemaV02 = require('@lumina-study/block-schema/v0.2')
 
 // ES Modules
-import blockSchema from '@lumina-study/block-schema' // v0.2 (default for stability)
+import blockSchema from '@lumina-study/block-schema' // v0.3 (default for stability)
 import blockSchemaV01 from '@lumina-study/block-schema/v0.1'
 import blockSchemaV02 from '@lumina-study/block-schema/v0.2'
 ```
